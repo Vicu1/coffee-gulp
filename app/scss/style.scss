@@ -4,6 +4,7 @@
 @import "libs";
 @import "global";
 
+
 .header__slider .slick-list {
   height: 100vh;
 }
@@ -1040,3 +1041,5 @@
     right: 9.5%;
   }
 }
+
+@import "media";

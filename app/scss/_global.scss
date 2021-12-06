@@ -138,3 +138,30 @@ body {
     transform: rotate(1turn);
   }
 }
+
+.burger {
+  border: none;
+  background-color: transparent;
+  width: 30px;
+  position: relative;
+  cursor: pointer;
+  display: none;
+  padding: 0;
+
+  & span:nth-child(2) {
+    margin: 6px 0;
+    transition: opacity 0.2s;
+  }
+
+  & span:first-child,
+  & span:last-child {
+    transition: transform 0.4s;
+  }
+
+  & span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+  }
+}
