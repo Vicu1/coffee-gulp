@@ -1,11 +1,14 @@
 @import "vars";
-@import "fonts";
 @import "reset";
 @import "libs";
 @import "global";
 
 
 .header__slider .slick-list {
+  height: 100vh;
+}
+
+#header-index {
   height: 100vh;
 }
 
@@ -112,7 +115,9 @@
   }
 
   &__social {
-    margin-top: 190px;
+    /* margin-top: 190px; */
+    position: absolute;
+    bottom: 100px;
   }
 
   &__social-list {
@@ -240,29 +245,15 @@
     position: absolute;
     z-index: 2;
     top: 50%;
-    transform: translateX(-50%);
+    padding: 0;
   }
 
   &__prevarrow {
-    left: 13%;
-
-    &:hover {
-      animation-name: prev-arrow;
-      animation-duration: 0.4s;
-      animation-direction: alternate;
-      animation-iteration-count: infinite;
-    }
+    left: 10%;
   }
 
   &__nextarrow {
     right: 10%;
-
-    &:hover {
-      animation-name: next-arrow;
-      animation-duration: 0.4s;
-      animation-direction: alternate;
-      animation-iteration-count: infinite;
-    }
   }
 }
 
@@ -286,6 +277,7 @@
     text-align: center;
     transition: all 0.2s;
     position: relative;
+    height: 395px;
   }
 
   &__img {
@@ -1014,32 +1006,6 @@
   background-color: #a3a3a3;
 }
 
-@keyframes prev-arrow {
-  0% {
-    left: 13%;
-  }
 
-  50% {
-    left: 12.8%;
-  }
-
-  100% {
-    left: 12.5%;
-  }
-}
-
-@keyframes next-arrow {
-  0% {
-    right: 10%;
-  }
-
-  50% {
-    right: 9.8%;
-  }
-
-  100% {
-    right: 9.5%;
-  }
-}
 
 @import "media";
