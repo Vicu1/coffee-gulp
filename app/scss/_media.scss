@@ -575,3 +575,13 @@
       margin-left: 0;
    }
 }
+
+@media (max-height: 750px) {
+   .header__title {
+      margin-top: 100px;
+   }
+
+   .header__social {
+      bottom: 50px;
+   }
+}
