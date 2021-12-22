@@ -23,3 +23,20 @@ $(".burger").on("click", function () {
   $(".header__nav-list").toggleClass("header__nav--active");
   $(".burger").toggleClass("burger--active");
 });
+
+const button = document.querySelectorAll('.remove');
+const rows = document.querySelectorAll('.cart__row');
+for (let i of button) {
+  i.addEventListener('click', () => {
+    const parent = i.parentNode;
+    parent.remove(parent);
+
+  })
+}
+/* if () {
+  const text = document.createElement('h1');
+  text.textContent = `The cart is empty`;
+  const inner = document.querySelector('.cart__inner');
+  inner.appendChild(text);
+} */
+
