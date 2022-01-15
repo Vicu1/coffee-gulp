@@ -41,7 +41,7 @@ const styleElem = document.head.appendChild(document.createElement("style"));
 
 const newRow = (title) => {
     return `
-        <div class="cart__row">
+       
             <div class="cart__item">
                 <img src="images/cart-${title}.png" alt="${title}">
             </div>
@@ -59,15 +59,19 @@ const newRow = (title) => {
             </div>
             <button class="remove">
                 <img src="images/remove.png" alt="remove">
-            /button>
-        </div>
+            </button>
+     
       `
 }
 
 let arr = [];
 
-
-
+const insertItems = (title) => {
+    const item = document.createElement('div');
+    item.classList = 'cart__row';
+    item.innerHTML = newRow(title);
+    arr.push(item);
+}
 
 for (const item of cartBtns) {
     item.addEventListener('click', () => {
@@ -75,6 +79,8 @@ for (const item of cartBtns) {
         const title = item.parentElement.parentElement.querySelector('.shop__item-title').innerHTML;
         switch (title) {
             case 'Cappuccino':
+                insertItems(title);
+                localStorage.setItem('array', JSON.stringify(arr));
 
                 break;
             case 'Latte':
@@ -105,3 +111,4 @@ for (const item of cartBtns) {
 
     })
 }
+const cart = document.querySelector('.cart__inner');
