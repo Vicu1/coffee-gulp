@@ -24,44 +24,33 @@ $(".burger").on("click", function() {
     $(".burger").toggleClass("burger--active");
 });
 
-/* const button = document.querySelectorAll('.remove');
-const rows = document.querySelectorAll('.cart__row');
 
 
-for (let i of button) {
-    i.addEventListener('click', () => {
-        const parent = i.parentNode;
-        parent.remove(parent);
-    })
-}
-
- */
 const cartBtns = document.querySelectorAll('.shop__item-cart');
 const styleElem = document.head.appendChild(document.createElement("style"));
 
 const newRow = (title) => {
     return `
-       
-            <div class="cart__item">
-                <img src="images/cart-${title}.png" alt="${title}">
-            </div>
-            <div class="cart__item">
-                <h5>${title}</h5>
-            </div>
-            <div class="cart__item">
-                <h5>5$</h5>
-            </div>
-            <div class="cart__item">
-                <h5>1</h5>
-            </div>
-            <div class="cart__item">
-                <h5>5$</h5>
-            </div>
-            <button class="remove">
-                <img src="images/remove.png" alt="remove">
-            </button>
-     
-      `
+          <div class="cart__item">
+              <img src="images/cart-${title}.png" alt="${title}">
+          </div>
+          <div class="cart__item">
+              <h5>${title}</h5>
+          </div>
+          <div class="cart__item">
+              <h5>5$</h5>
+          </div>
+          <div class="cart__item">
+              <h5>1</h5>
+          </div>
+          <div class="cart__item">
+              <h5>5$</h5>
+          </div>
+          <button class="remove">
+              <img src="images/remove.png" alt="remove">
+          </button>
+    
+        `
 }
 
 let arr = [];
@@ -70,7 +59,7 @@ const insertItems = (title) => {
     const item = document.createElement('div');
     item.classList = 'cart__row';
     item.innerHTML = newRow(title);
-    arr.push(item);
+    arr.push(item.innerHTML);
 }
 
 for (const item of cartBtns) {
@@ -80,14 +69,13 @@ for (const item of cartBtns) {
         switch (title) {
             case 'Cappuccino':
                 insertItems(title);
-                localStorage.setItem('array', JSON.stringify(arr));
-
+                localStorage.setItem('array', arr);
                 break;
             case 'Latte':
-                console.log('privet');
+                insertItems(title);
                 break;
             case 'Pink Donut':
-                console.log('privet');
+                insertItems(title);
                 break;
             case 'Bread Sandwich':
                 console.log('privet');
